@@ -1,0 +1,12 @@
+{
+   "run_list":[
+      "recipe[iptables-stop]",
+      "role[webserver]",
+      "role[database]"
+   ],
+   "mysql": {
+      "server_root_password": "pass",
+      "server_repl_password": "pass",
+      "server_debian_password": "pass"
+   }
+}
