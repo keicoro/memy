@@ -2,7 +2,8 @@
    "run_list":[
       "recipe[iptables-stop]",
       "role[webserver]",
-      "role[database]"
+      "role[database]",
+      "role[devtool]"
    ],
    "mysql": {
       "server_root_password": "pass",
