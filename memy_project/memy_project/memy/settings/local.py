@@ -64,6 +64,6 @@ def always_show_toolbar(self):
     return True
 
 DEBUG_TOOLBAR_CONFIG = {
-    'SHOW_TOOLBAR_CALLBACK': always_show_toolbar,
+    'SHOW_TOOLBAR_CALLBACK': 'memy.settings.local.always_show_toolbar',
 }
 ########## END TOOLBAR CONFIGURATION
