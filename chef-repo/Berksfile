@@ -4,4 +4,3 @@ cookbook "yum-epel"
 cookbook 'mysql'
 cookbook 'pyenv', git: 'https://github.com/sds/chef-pyenv.git'
 cookbook 'sudo'
-cookbook 'tmux'

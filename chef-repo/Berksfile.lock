@@ -4,14 +4,12 @@ DEPENDENCIES
     git: https://github.com/sds/chef-pyenv.git
     revision: df2ca33f92cdad1604898bf84403ea86c057f8ab
   sudo
-  tmux
   yum-epel
 
 GRAPH
   mysql (5.2.0)
   pyenv (0.0.2)
   sudo (2.5.2)
-  tmux (1.4.0)
   yum (3.2.0)
   yum-epel (0.3.6)
     yum (~> 3.0)
