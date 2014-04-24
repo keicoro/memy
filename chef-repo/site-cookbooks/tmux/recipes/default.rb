@@ -64,3 +64,10 @@ bash "install tmux" do
       make install
       EOH
 end
+
+cookbook_file '/home/vagrant/.tmux.conf' do
+  source ".tmux.conf"
+  owner "vagrant"
+  group "vagrant"
+  mode "0755"
+end
