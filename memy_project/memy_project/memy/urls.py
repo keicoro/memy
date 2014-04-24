@@ -11,8 +11,8 @@ urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(template_name='base.html')),
 
     # Examples:
-    # url(r'^$', 'memy_project.views.home', name='home'),
-    # url(r'^memy_project/', include('memy_project.foo.urls')),
+    # url(r'^$', 'memyt.views.home', name='home'),
+    # url(r'^memy/', include('memy.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

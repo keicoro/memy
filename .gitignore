@@ -2,3 +2,4 @@ chef-repo/cookbooks/
 chef-repo/Berksfile.lock
 .vagrant
 .DS_Store
+.idea
