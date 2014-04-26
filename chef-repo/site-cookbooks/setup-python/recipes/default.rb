@@ -12,29 +12,29 @@
 
 node.override['pyenv']['user_installs'] = [
   {
-    'user'     => 'vagrant',
+    'user'     => "#{node['ssh']['user']}",
     'pythons'  => ['2.7.6']
   }
 ]
 include_recipe "pyenv::user"
 
 execute "install-virtualenv-plugin" do
-  not_if { ::File.exists?('/home/vagrant/.pyenv/plugins/pyenv-virtualenv') }
-  user "vagrant"
-  group "vagrant"
-  command "git clone https://github.com/yyuu/pyenv-virtualenv.git /home/vagrant/.pyenv/plugins/pyenv-virtualenv; exec $SHELL"
+  not_if { ::File.exists?("/home/#{node['ssh']['user']}/.pyenv/plugins/pyenv-virtualenv") }
+  user "#{node['ssh']['user']}"
+  group "#{node['ssh']['user']}"
+  command "git clone https://github.com/yyuu/pyenv-virtualenv.git /home/#{node['ssh']['user']}/.pyenv/plugins/pyenv-virtualenv; exec $SHELL"
 end
 
 bash "create-virtualenv" do
-  not_if { ::File.exists?('/home/vagrant/.pyenv/versions/memy-venv-2.7.6') }
-  user "vagrant"
-  group "vagrant"
-  environment 'HOME' => '/home/vagrant'
+  not_if { ::File.exists?("/home/#{node['ssh']['user']}/.pyenv/versions/memy-venv-2.7.6") }
+  user "#{node['ssh']['user']}"
+  group "#{node['ssh']['user']}"
+  environment 'HOME' => "/home/#{node['ssh']['user']}"
   code <<-EOH
-  sudo su - vagrant
+  sudo su - #{node['ssh']['user']}
   source /etc/profile.d/pyenv.sh
-  source /home/vagrant/.bash_profile
-  /home/vagrant/.pyenv/bin/pyenv virtualenv 2.7.6 memy-venv-2.7.6
+  source /home/#{node['ssh']['user']}/.bash_profile
+  /home/#{node['ssh']['user']}/.pyenv/bin/pyenv virtualenv 2.7.6 memy-venv-2.7.6
   EOH
 end
 

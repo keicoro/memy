@@ -1,4 +1,16 @@
 {
-  "run_list":[
-  ]
+   "run_list":[
+      "role[webserver]",
+      "role[database]",
+      "role[devtool]"
+   ],
+   "mysql": {
+      "server_root_password": "pass",
+      "server_repl_password": "pass",
+      "server_debian_password": "pass"
+   },
+   "ssh": {
+      "user": "ec2-user",
+      "group": "ec2-user"
+   }
 }

@@ -6,7 +6,6 @@
    "description": "",
    "chef_type": "role",
    "run_list": [
-      "recipe[grant_sudo]",
       "recipe[tmux]",
       "recipe[setup-python]"
    ]

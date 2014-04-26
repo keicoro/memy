@@ -65,9 +65,13 @@ bash "install tmux" do
       EOH
 end
 
-cookbook_file '/home/vagrant/.tmux.conf' do
+cookbook_file "/home/#{node['ssh']['user']}/.tmux.conf" do
   source ".tmux.conf"
-  owner "vagrant"
-  group "vagrant"
+  owner "#{node['ssh']['user']}"
+  group "#{node['ssh']['user']}"
   mode "0755"
+end
+
+link "/usr/lib64/libevent-2.0.so.5" do
+  to "/usr/local/lib/libevent-2.0.so.5"
 end
