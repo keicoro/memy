@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "dependencies": {
     "angular": "~1.2.12",
-    "ionic": "v1.0.0-beta.6"
+    "ionic": "v1.0.0-beta.6",
+    "angular-touch": "~1.2.17",
+    "ionic-swipecards": "https://raw.githubusercontent.com/driftyco/ionic-contrib-swipe-cards/master/ionic.swipecards.js"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.12",
     "angular-scenario": "~1.2.12"
   }
 }
-
